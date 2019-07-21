@@ -76,6 +76,15 @@ new Actor('Michael Biehn', 50),
 new Actor('Linda Hamilton', 50)
 ];
 
+const social = {
+  share(friendName) {
+    console.log(`${friendName} shares ${this.title}`);
+  },
+  like(friendName) {
+    console.log(`${friendName} likes ${this.title}`);
+  }
+};
+
 terminator.addCast(arnold);
 terminator.addCast(otherCast);
 
@@ -91,3 +100,7 @@ eventEmitter.on('play', logPlay);
  terminator.play();
 
  eventEmitter.off('play', logPlay);
+
+
+terminator = Object.assign(terminator, social);
+terminator.share('Quemal guiso');
